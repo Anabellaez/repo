@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Armá tu plato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="brand">
+    <h1>Armá tu plato</h1>
+    <p>Elegí la comida y los alimentos: el plato se divide solo con las proporciones de tu nutricionista. Todo sin TACC.</p>
+  </header>
+
+  <section class="panel-comida" aria-labelledby="h-comida">
+    <h2 id="h-comida" class="eyebrow">1 · Comida</h2>
+    <div id="comidas" class="comidas" role="radiogroup" aria-labelledby="h-comida"></div>
+    <p id="tip" class="tip"></p>
+  </section>
+
+  <section class="panel-plato" aria-labelledby="titulo-plato">
+    <div class="plato-head">
+      <div>
+        <h2 id="titulo-plato">Almuerzo</h2>
+        <p id="formula" class="formula"></p>
+      </div>
+      <div id="estado"></div>
+    </div>
+    <div class="plato-wrap">
+      <svg id="plato" role="img" aria-label="Plato"></svg>
+    </div>
+    <div id="condimento" class="condimento"></div>
+    <ul id="detalle" class="detalle"></ul>
+    <div class="acciones-plato">
+      <button type="button" id="copiar" class="btn">Copiar plato</button>
+      <textarea id="copia-txt" hidden rows="6" aria-label="Texto del plato para copiar"></textarea>
+    </div>
+  </section>
+
+  <section class="panel-alimentos" aria-labelledby="h-alim">
+    <div class="alim-head">
+      <h2 id="h-alim" class="eyebrow">2 · Alimentos</h2>
+      <div class="acciones">
+        <button type="button" id="azar" class="btn primary">Armar uno al azar</button>
+        <button type="button" id="vaciar" class="btn">Vaciar</button>
+      </div>
+    </div>
+    <div id="grupos" class="grupos"></div>
+  </section>
+
+  <section class="panel-dia" aria-labelledby="h-dia">
+    <div class="alim-head">
+      <h2 id="h-dia" class="eyebrow">3 · Plan del día</h2>
+      <div class="acciones">
+        <button type="button" id="copiar-dia" class="btn">Copiar día</button>
+        <button type="button" id="nuevo-dia" class="btn">Nuevo día</button>
+      </div>
+    </div>
+    <ol id="dia-comidas" class="dia-comidas"></ol>
+    <div class="fruta-extra">
+      <span id="lbl-fruta-extra">Frutas sueltas (colación o postre)</span>
+      <div class="stepper" role="group" aria-labelledby="lbl-fruta-extra">
+        <button type="button" id="fruta-menos" class="btn" aria-label="Una fruta menos">−</button>
+        <output id="fruta-extra" aria-live="polite">0</output>
+        <button type="button" id="fruta-mas" class="btn" aria-label="Una fruta más">+</button>
+      </div>
+    </div>
+    <h3 class="sub">Total de porciones</h3>
+    <table class="totales">
+      <thead><tr><th scope="col">Grupo</th><th scope="col">Llevás</th><th scope="col">Objetivo</th><th scope="col">Estado</th></tr></thead>
+      <tbody id="totales"></tbody>
+    </table>
+    <p class="nota">Cada grupo presente en un plato suma 1 porción; las verduras cuentan por variedad distinta. Objetivos a confirmar con la nutricionista.</p>
+    <textarea id="copia-dia-txt" hidden rows="10" aria-label="Texto del día para copiar"></textarea>
+  </section>
+</div>
+<script src="js/data.js"></script>
+<script src="js/plate.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
